@@ -49,28 +49,26 @@ async function connectSerial(manual, filters=[], openOptions={baudRate: 250000})
 }
 
 function barcodeScannerCreating(){
-    console.log('barcode scanner creating');
     setTimeout(()=>{connectScanner(false)}, 250);
-    console.log('setting listener', navigator.serial);
     navigator.serial.addEventListener("connect", (event) => {
         console.log('connect');
-        //console.log(event);
         if (!serialScanner)
             connectScanner(false)
     });
     navigator.serial.addEventListener("disconnect", (event) => {
         if (serialScanner && serialScanner==event.target){
+            console.log('disconnect');
+            document.dispatchEvent(new CustomEvent('kirsaExt', { detail: {msg: 'scanner disconnected'} }));
+            serialScanner=null;
             //disconnectScanner();
         }
     });
-    console.log('end setting listener');
 }
 
 async function connectScanner(manual){
     serialScanner = await connectSerial(manual, filters, {baudRate: 250000})
     this.trigger=true
     if (serialScanner){
-        console.log("dispatch 1");
         document.dispatchEvent(new CustomEvent('kirsaExt', { detail: {msg: 'scanner connected'} }));
     }
     while (serialScanner && serialScanner.readable && !serialScanner.readable.locked && this.trigger) {
