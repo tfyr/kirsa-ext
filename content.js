@@ -6,6 +6,7 @@ const filters = [
     { usbVendorId: 0x1eab, usbProductId: 0x1a06 }, // ???
     { usbVendorId: 0x324f, usbProductId: 0x0042 }, // Mertech NS021
     { usbVendorId: 0x2dd6, usbProductId: 0x214a }, // Mertech 2210
+    { usbVendorId: 0x2dd6, usbProductId: 0x216a }, // Mertech 2310
     { usbVendorId: 0x0c2e, usbProductId: 0x0caa }, // Honeywell 1450g2DHR
     //{ usbVendorId: 0x18d1, idProduct: 0x4ee4}
 ];
