@@ -1,7 +1,7 @@
 {
   "name": "Kirsa Ext",
-  "description": "Build an Extension!",
-  "version": "1.0.5",
+  "description": "kirsa extension for scanners to tabs over serial port",
+  "version": "1.0.7",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
