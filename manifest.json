@@ -11,6 +11,7 @@
       "matches": [
         "https://kirsa.9733.ru/*",
         "https://kirsadev.9733.ru/*",
+        "http://localhost/*",
         "http://localhost:8080/*"
       ],
       "js": ["content.js"]
