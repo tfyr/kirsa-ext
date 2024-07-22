@@ -6,8 +6,12 @@ const filters = [
     { usbVendorId: 0x1eab, usbProductId: 0x1a06 }, // ???
     { usbVendorId: 0x324f, usbProductId: 0x0042 }, // Mertech NS021
     { usbVendorId: 0x2dd6, usbProductId: 0x214a }, // Mertech 2210
+    { usbVendorId: 0x2dd6, usbProductId: 0x216a }, // Mertech 2310 P2D
     { usbVendorId: 0x0c2e, usbProductId: 0x0caa }, // Honeywell 1450g2DHR
-    //{ usbVendorId: 0x18d1, idProduct: 0x4ee4}
+    { usbVendorId: 0x0c2e, usbProductId: 0x0bea }, // Honeywell 7580
+    { usbVendorId: 0x0c2e, usbProductId: 0x0200 }, // Metrologic Scanner (Orbit)
+// idVendor=2dd6, idProduct=216a
+        //{ usbVendorId: 0x18d1, idProduct: 0x4ee4}
 ];
 
 var serialScanner=null;
@@ -83,14 +87,15 @@ async function connectScanner(manual){
                 }
                 value.forEach(async e =>  {
                     // eslint-disable-next-line
+                    //console.log('0x'+e.toString(16).padStart(2,'0')+" "+String.fromCharCode(e))
                     if (e==10){
                     } else if (e==13){
-                        console.log(s, chrome)
+                        //console.log(s, chrome)
                         if (chrome.runtime)
                             chrome.runtime.sendMessage({barcode: s});
                         else
                             console.log('no runtime')
-                        console.log('scanner host: "'+s+'"')
+                        //console.log('scanner host: "'+s+'"')
                         s = ''
                     } else
                         s += String.fromCharCode(e);
@@ -105,22 +110,18 @@ async function connectScanner(manual){
 }
 
 document.addEventListener('toKirsaExt',async (params)=>{
-    console.log("toKirsaExt", params);
-    connectScanner(true);
-});
-barcodeScannerCreating();
-/*let connectScannerButton = document.getElementById("connectScanner");
-
-if (connectScannerButton){
-    connectScannerButton.addEventListener("click", async () => {
+    if (params.detail && params.detail.msg && params.detail.msg=='activateThisTab')
+        chrome.runtime.sendMessage({switchTo: true});
+    else
         connectScanner(true);
-    });
-}*/
+});
 
 
+barcodeScannerCreating();
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
+        console.log(request)
         if (request.barcode) {
             console.log("last barcode: ", request.barcode);
             sendResponse({status: "done"});

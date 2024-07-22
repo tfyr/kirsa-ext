@@ -13,11 +13,14 @@ function createTab(url){
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log("background barcode: ", request);
+    console.log("background request : ", request);
     let queryOptions = { active: true, currentWindow: true };
     //let tab = await chrome.tabs.query(queryOptions);
     //console.log(tab)
-    if (request.barcode && request.barcode.startsWith('http')){
+    if (request.switchTo) {
+        let updateProperties = { 'active': true };
+        chrome.tabs.update(sender.tab.id, updateProperties, (tab) => { });
+    } else if (request.barcode && request.barcode.startsWith('http')){
         let created=false
         if (tabId){
             //chrome.tabs.sendMessage(tabId, {url: request.barcode}, function(response) {});        
