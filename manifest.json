@@ -13,7 +13,7 @@
         "https://kirsa.9733.ru/*",
         "https://kirsadev.9733.ru/*",
         "http://localhost:8080/*",
-        "http://localhost/*",
+        "http://localhost/*"
       ],
       "js": ["content.js"]
     }
