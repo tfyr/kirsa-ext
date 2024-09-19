@@ -3,6 +3,7 @@ const filters = [
     { usbVendorId: 0x1a86, usbProductId: 0x5723 }, // Netum C750
     { usbVendorId: 0x05e0, usbProductId: 0x1701 }, // Motorola Symbol Zebra ds4308
     { usbVendorId: 0x05f9, usbProductId: 0x4204 }, // Dialogic QuickScan QQ2430
+    { usbVendorId: 0x05f9, usbProductId: 0x2218 }, // Datalogic QuickScan QQ2430
     { usbVendorId: 0x1eab, usbProductId: 0x1a06 }, // ???
     { usbVendorId: 0x324f, usbProductId: 0x0042 }, // Mertech NS021
     { usbVendorId: 0x2dd6, usbProductId: 0x214a }, // Mertech 2210

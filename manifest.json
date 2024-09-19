@@ -1,7 +1,7 @@
 {
   "name": "Kirsa Ext",
   "description": "Build an Extension!",
-  "version": "1.1.3.4",
+  "version": "1.1.3.5",
   "manifest_version": 3,
   "update_url": "https://kirsa.9733.ru/static/kirsa-ext-updates.xml",
   "background": {
