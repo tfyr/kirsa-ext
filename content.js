@@ -10,6 +10,7 @@ const filters = [
     { usbVendorId: 0x2dd6, usbProductId: 0x216a }, // Mertech 2310 P2D
     { usbVendorId: 0x0c2e, usbProductId: 0x0caa }, // Honeywell 1450g2DHR
     { usbVendorId: 0x0c2e, usbProductId: 0x0bea }, // Honeywell 7580
+    { usbVendorId: 0x0c2e, usbProductId: 0x1014 }, // Honeywell ???
     { usbVendorId: 0x0c2e, usbProductId: 0x0200 }, // Metrologic Scanner (Orbit)
 // idVendor=2dd6, idProduct=216a
         //{ usbVendorId: 0x18d1, idProduct: 0x4ee4}
