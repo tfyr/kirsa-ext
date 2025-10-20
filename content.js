@@ -8,6 +8,8 @@ const filters = [
     { usbVendorId: 0x324f, usbProductId: 0x0042 }, // Mertech NS021
     { usbVendorId: 0x2dd6, usbProductId: 0x214a }, // Mertech 2210
     { usbVendorId: 0x2dd6, usbProductId: 0x216a }, // Mertech 2310 P2D
+    { usbVendorId: 0x2dd6, usbProductId: 0x21CA }, // Mertech 2310 P2D
+    { usbVendorId: 0x2dd6, usbProductId: 0x2428 }, // Mertech 600 P2D
     { usbVendorId: 0x0c2e, usbProductId: 0x0caa }, // Honeywell 1450g2DHR
     { usbVendorId: 0x0c2e, usbProductId: 0x0bea }, // Honeywell 7580
     { usbVendorId: 0x0c2e, usbProductId: 0x1014 }, // Honeywell ???
